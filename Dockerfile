@@ -26,6 +26,9 @@ RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VER
 COPY . /app/
 WORKDIR /app/
 
+# sport-damm config kopieren
+COPY sport-damm.de /etc/nginx/vhost.d/
+
 ENV DOCKER_HOST unix:///tmp/docker.sock
 
 VOLUME ["/etc/nginx/certs"]
